@@ -1,0 +1,76 @@
+html, body, main {
+  height: 100%;
+  width: 100%;
+}
+
+.dark_blue {
+  background-color: #2A457A;
+  color: #efefef;
+}
+
+.light_blue {
+  background-color: #099DD9;
+}
+
+
+a#menu svg {
+  width: 40px;
+  fill: #000;
+}
+nav, main {
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+nav {
+  width: 300px;
+  height: 100%;
+  position: absolute;
+  -webkit-transform: translate(-300px, 0);
+  -moz-transform: translate(-300px, 0);
+  -ms-transform: translate(-300px, 0);
+  -o-transform: translate(-300px, 0);
+  transform: translate(-300px, 0);: ;
+  -webkit-transition: transform 0.3s ease;
+  -moz-transition: transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
+}
+
+nav.open {
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+/* the nav is added to the breakpoint below because at a larger screen size,
+   the nav window will remain open! */
+
+@media screen and (min-width: 600px) {
+  nav {
+    position: relative;
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  body {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  main {
+    width: auto;
+    flex-grow: 1;
+  }
+
+  @media (min-width: 600px) {
+    main > #menu:after {
+      content: 'The drawer stays open if width > 600px';
+    }
+    main p, nav p {
+      text-decoration: line-through;
+    }
+  }
+}
