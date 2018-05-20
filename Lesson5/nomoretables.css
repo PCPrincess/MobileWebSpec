@@ -1,0 +1,30 @@
+
+/*HIDE CONTENT*/
+.property {
+  display: none;
+}
+
+/*Method One*/
+/*From Table Layout To Column Layout at Smaller Screen Sizes*/
+@media screen and (max-width: 500px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  thead tr {
+    /*Hiding, but Still Allowing for Screen Readers*/
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  td {
+    position: relative;
+    /*Space Before Each Data Item*/
+    padding-left: 50%;
+  }
+  td:before {
+    position: absolute;
+    left: 6px;
+    content: attr(data-th);
+    font-weight: bold;
+  }
+}
