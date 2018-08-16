@@ -64,6 +64,9 @@ function openModal(e) {
   }
 
   // FIXME: hide non-modal content from screen readers
+  document.querySelector('.wrapper').setAttribute('aria-hidden', true);
+  // Note: Everything NOT in the modal is in a div container with
+  //       a class="wrapper"
 }
 
 function closeModal() {
@@ -75,4 +78,6 @@ function closeModal() {
   focusedElementBeforeModal.focus();
 
   // FIXME: don't forget to make main content screen reader accessible again.
+  document.querySelector('.wrapper').removeAttribute('aria-hidden');
+  // Note: Okay, we'll just remove the attribute!
 }

@@ -23,7 +23,7 @@ main {
   color: #FFF;
 }
 
-.disclosure-button .icon::after {
+.disclosure-button[aria-expanded="false"] {
   display: inline-block;
   font-size: 14px;
   margin-right: 8px;
@@ -31,7 +31,7 @@ main {
   height: 36px;
 }
 
-.disclosure-button .icon::after {
+.disclosure-button[aria-expanded="true"] {
   content: '▶';
 }
 
@@ -39,12 +39,12 @@ main {
   content: '▼';
 }
 
-.disclosure-content.hidden {
+.disclosure-content[aria-hidden="true"] {
   visibility: hidden;
   opacity: 0;
 }
 
-.disclosure-content {
+.disclosure-content[aria-hidden="false"] {
   visibility: visible;
   opacity: 1;
 }
